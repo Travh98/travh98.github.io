@@ -1,18 +1,53 @@
+:root {
+    --umber: rgba(107, 96, 84, 1);
+    --artichoke: rgba(146, 148, 135, 1);
+    --ash-gray: rgba(161, 176, 171, 1);
+    --cambridge-blue: rgba(195, 218, 195, 1);
+    --nyanza: rgba(213, 236, 212, 1);
+    
+    /* SCSS Gradient */
+    --gradient-top: linear-gradient(0deg, #6b6054ff, #929487ff, #a1b0abff, #c3dac3ff, #d5ecd4ff);
+    --gradient-right: linear-gradient(90deg, #6b6054ff, #929487ff, #a1b0abff, #c3dac3ff, #d5ecd4ff);
+    --gradient-bottom: linear-gradient(180deg, #6b6054ff, #929487ff, #a1b0abff, #c3dac3ff, #d5ecd4ff);
+    --gradient-left: linear-gradient(270deg, #6b6054ff, #929487ff, #a1b0abff, #c3dac3ff, #d5ecd4ff);
+    --gradient-top-right: linear-gradient(45deg, #6b6054ff, #929487ff, #a1b0abff, #c3dac3ff, #d5ecd4ff);
+    --gradient-bottom-right: linear-gradient(135deg, #6b6054ff, #929487ff, #a1b0abff, #c3dac3ff, #d5ecd4ff);
+    --gradient-top-left: linear-gradient(225deg, #6b6054ff, #929487ff, #a1b0abff, #c3dac3ff, #d5ecd4ff);
+    --gradient-bottom-left: linear-gradient(315deg, #6b6054ff, #929487ff, #a1b0abff, #c3dac3ff, #d5ecd4ff);
+    --gradient-radial: radial-gradient(#6b6054ff, #929487ff, #a1b0abff, #c3dac3ff, #d5ecd4ff);
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+    color: var(--cambridge-blue);
+    background-color: var(--umber);
 }
 
-.project-card {
-    background-color: rgb(35, 25, 46);
+.cardlist {
+    padding: 4px;
+}
+
+.card {
+    background-color: var(--artichoke);
     border-radius: 1rem;
     text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 20%;
+    padding: 4px;
+    margin: 8px;
+    width: 50%;
 }
 
-.project-tags {
-    font-family: 'Courier New', Courier, monospace;
+.split
+{
+    display: flex;
+}
+
+.split .left,
+.split .right
+{
+    flex: 1;
+}
+
+.taglist {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -21,10 +56,12 @@ body {
     padding-bottom: 0;
 }
 
-.project-tags li {
-    float: left;
-    padding: 16px;
-    align-self: center;
-    background-color: blueviolet;
+.tag {
+    display: inline-block;
+    /* float: left; */
+    padding: 8px;
+    margin: 4px;
+    background-color: var(--nyanza);
+    color: var(--artichoke);
     border-radius: 0.75rem;
 }

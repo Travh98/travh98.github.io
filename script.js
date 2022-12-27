@@ -1,4 +1,3 @@
-// import data from './projects.json' assert { type: 'JSON' };
 function addItem() {
     const type = document.createElement("p");
     type.appendChild(document.createTextNode("test"));
@@ -27,40 +26,36 @@ function parseJson()
         .then(function(data) {
             for(const element of data.projects)
             {
-                const name = document.createElement("h2");
-                name.appendChild(document.createTextNode(element.name));
+                // Create card and put into card list
+                const card = document.createElement("div");
+                card.className = "card";
+                document.getElementById("cardlist1").appendChild(card);
 
-                const date = document.createElement("h2");
+                // Parse and populate name, date, info
+                const header = document.createElement("div");
+                header.className = "split";
+                card.appendChild(header);
+
+                const name = document.createElement('div');
+                name.className = "left";
+                name.appendChild(document.createTextNode(element.name));                
+                header.appendChild(name);
+
+                const date = document.createElement("div");
+                date.className = "right";
                 date.appendChild(document.createTextNode(element.date));
+                header.appendChild(date);
 
-                document.getElementById("card1").appendChild(name);
-                document.getElementById("card1").appendChild(date);
-
+                const taglist = document.createElement("ul");
+                taglist.className = "taglist"
+                card.appendChild(taglist);
                 for(const item of element.tags)
                 {
                     const tag = document.createElement("li");
+                    tag.className = "tag";
                     tag.appendChild(document.createTextNode(item));
-                    tag.className = "tagitem";
-                    document.getElementById("card1").appendChild(tag);
+                    taglist.appendChild(tag);
                 }
             }
         });
-    
-    // var jsonObj = response.json.getElementById("projects");
-
-    // console.log(jsonObj);
-
-    // var jsonObj = json.getElementById("projects");
-    // var jsonArray = Object.keys(jsonObj);
-    
-    // for(var i = 0; i < jsonArray.length; ++i)
-    // {
-    //     console.log(jsonArray[i]);
-    // }
-
-    // createProjectCard();
-    // function createProjectCard()
-    // {
-    
-    // }
 }
