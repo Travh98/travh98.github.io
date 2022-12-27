@@ -1,15 +1,12 @@
 parseJson();
-// loadFadeScroll();
 
-function parseJson()
-{
+function parseJson() {
     fetch('./projects.json')
-        .then(function(resp) {
+        .then(function (resp) {
             return resp.json();
         })
-        .then(function(data) {
-            for(const element of data.projects)
-            {
+        .then(function (data) {
+            for (const element of data.projects) {
                 const sec = document.createElement("section");
                 sec.className = 'hidden';
                 document.getElementById("cardlist1").appendChild(sec);
@@ -27,7 +24,7 @@ function parseJson()
                 const name = document.createElement('a');
                 name.className = "left";
                 name.href = element.link;
-                name.appendChild(document.createTextNode(element.name));                
+                name.appendChild(document.createTextNode(element.name));
                 header.appendChild(name);
 
                 const date = document.createElement("div");
@@ -36,13 +33,12 @@ function parseJson()
                 header.appendChild(date);
 
                 // List of tags
-                const taglist = document.createElement("ul");
+                const taglist = document.createElement("div");
                 taglist.className = "taglist"
                 card.appendChild(taglist);
-                for(const item of element.tags)
-                {
-                    const tag = document.createElement("li");
-                    tag.className = "tag";
+                for (const item of element.tags) {
+                    const tag = document.createElement("div");
+                    tag.className = "tag taghidden";
                     tag.appendChild(document.createTextNode(item));
                     taglist.appendChild(tag);
                 }
@@ -65,20 +61,12 @@ function parseJson()
                     }
                 })
             })
-            
+
             const hiddenElements = document.querySelectorAll('.hidden');
             hiddenElements.forEach((el) => observer.observe(el));
             console.log("Fade scroll script loaded, hidden elements: "
                 + hiddenElements.length);
+
+            slidetotheright();
         });
 }
-
-// function loadFadeScroll()
-// {
-//     var head = document.getElementsByTagName("head")[0];
-//     var script = document.createElement("script");
-//     script.src = "./fadescroll.js";
-//     script.type = "text/javascript";
-//     script.defer = true;
-//     head.appendChild(script);
-// }

@@ -85,10 +85,19 @@ body {
     border-radius: 0.75rem;
 }
 
-/* .taghidden {
-
+.taghidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
 }
 
 .tagshown {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
 
-} */
+.tag:nth-child(n){
+    transition-delay: n * 200ms;
+}
