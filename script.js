@@ -36,8 +36,9 @@ function parseJson()
                 header.className = "split";
                 card.appendChild(header);
 
-                const name = document.createElement('div');
+                const name = document.createElement('a');
                 name.className = "left";
+                name.href = "http://" + element.link;
                 name.appendChild(document.createTextNode(element.name));                
                 header.appendChild(name);
 
@@ -46,6 +47,7 @@ function parseJson()
                 date.appendChild(document.createTextNode(element.date));
                 header.appendChild(date);
 
+                // List of tags
                 const taglist = document.createElement("ul");
                 taglist.className = "taglist"
                 card.appendChild(taglist);
@@ -56,6 +58,12 @@ function parseJson()
                     tag.appendChild(document.createTextNode(item));
                     taglist.appendChild(tag);
                 }
+
+                // Description
+                const desc = document.createElement("p");
+                desc.className = "description";
+                desc.appendChild(document.createTextNode(element.description));
+                card.appendChild(desc);
             }
         });
 }

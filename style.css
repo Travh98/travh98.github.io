@@ -39,6 +39,8 @@ body {
 .split
 {
     display: flex;
+    font-size: larger;
+    font-weight: bold;    
 }
 
 .split .left,
@@ -58,7 +60,6 @@ body {
 
 .tag {
     display: inline-block;
-    /* float: left; */
     padding: 8px;
     margin: 4px;
     background-color: var(--nyanza);

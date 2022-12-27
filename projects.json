@@ -11,8 +11,9 @@
         "name": "This Website",
         "date": "26 Dec 2022",
         "tags":
-        ["HTML", "js", "CSS"],
-        "description": "Two sentence description. Boo yah"
+        ["HTML", "CSS", "Javascript"],
+        "description": "A website to show off all the cool projects I have completed.",
+        "link": "travh98.github.io"
     }
     ]
 }
