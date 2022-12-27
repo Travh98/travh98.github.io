@@ -1,21 +1,5 @@
-function addItem() {
-    const type = document.createElement("p");
-    type.appendChild(document.createTextNode("test"));
-    document.getElementById("card1").appendChild(type);
-    console.log("button pressed");
-
-    // console.log(data);
-
-    fetch('./projects.json')
-        .then((response) => response.json())
-        .then((json) => console.log(json));
-
-
-    console.log(json.getElementById("name"));
-
-}
-
 parseJson();
+// loadFadeScroll();
 
 function parseJson()
 {
@@ -26,10 +10,14 @@ function parseJson()
         .then(function(data) {
             for(const element of data.projects)
             {
+                const sec = document.createElement("section");
+                sec.className = 'hidden';
+                document.getElementById("cardlist1").appendChild(sec);
+
                 // Create card and put into card list
                 const card = document.createElement("div");
                 card.className = "card";
-                document.getElementById("cardlist1").appendChild(card);
+                sec.appendChild(card);
 
                 // Parse and populate name, date, info
                 const header = document.createElement("div");
@@ -38,7 +26,7 @@ function parseJson()
 
                 const name = document.createElement('a');
                 name.className = "left";
-                name.href = "http://" + element.link;
+                name.href = element.link;
                 name.appendChild(document.createTextNode(element.name));                
                 header.appendChild(name);
 
@@ -65,5 +53,32 @@ function parseJson()
                 desc.appendChild(document.createTextNode(element.description));
                 card.appendChild(desc);
             }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    console.log(entry)
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                    else {
+                        entry.target.classList.remove('show');
+                    }
+                })
+            })
+            
+            const hiddenElements = document.querySelectorAll('.hidden');
+            hiddenElements.forEach((el) => observer.observe(el));
+            console.log("Fade scroll script loaded, hidden elements: "
+                + hiddenElements.length);
         });
 }
+
+// function loadFadeScroll()
+// {
+//     var head = document.getElementsByTagName("head")[0];
+//     var script = document.createElement("script");
+//     script.src = "./fadescroll.js";
+//     script.type = "text/javascript";
+//     script.defer = true;
+//     head.appendChild(script);
+// }

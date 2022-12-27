@@ -11,9 +11,17 @@
         "name": "This Website",
         "date": "26 Dec 2022",
         "tags":
-        ["HTML", "CSS", "Javascript"],
+        ["HTML", "CSS", "Javascript", "JSON"],
         "description": "A website to show off all the cool projects I have completed.",
-        "link": "travh98.github.io"
+        "link": "http://travh98.github.io"
+    },
+    {
+        "name": "Wickford Map",
+        "date": "2018",
+        "tags":
+        ["Hammer"],
+        "description": "A 3D game level of Historic Downtown Wickford, RI.",
+        "link": "https://steamcommunity.com/sharedfiles/filedetails/?id=1905028592"
     }
     ]
 }

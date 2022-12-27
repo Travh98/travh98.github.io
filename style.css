@@ -23,6 +23,23 @@ body {
     background-color: var(--umber);
 }
 
+.hidden {
+    opacity: 0;
+    /* filter: blur(5px); */
+    transition: all 1s;
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+.show {
+    opacity: 1;
+    /* filter: blur(0px); */
+}
+
 .cardlist {
     padding: 4px;
 }
@@ -34,6 +51,7 @@ body {
     padding: 4px;
     margin: 8px;
     width: 50%;
+    min-height: 100vh;
 }
 
 .split
@@ -66,3 +84,11 @@ body {
     color: var(--artichoke);
     border-radius: 0.75rem;
 }
+
+/* .taghidden {
+
+}
+
+.tagshown {
+
+} */
