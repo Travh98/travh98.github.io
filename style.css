@@ -3,7 +3,28 @@ body {
 }
 
 .project-card {
-    background-color: #e4e455;
-    border-radius: 5rem;
+    background-color: rgb(35, 25, 46);
+    border-radius: 1rem;
     text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 20%;
+}
+
+.project-tags {
+    font-family: 'Courier New', Courier, monospace;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.project-tags li {
+    float: left;
+    padding: 16px;
+    align-self: center;
+    background-color: blueviolet;
+    border-radius: 0.75rem;
 }

@@ -1,0 +1,18 @@
+{
+    "projects": [ 
+    {
+        "name": "First Project",
+        "date": "today",
+        "tags":
+        ["Qt", "C++", "UML"],
+        "description": "Two sentence description. Boo yah"
+    },
+    {
+        "name": "This Website",
+        "date": "26 Dec 2022",
+        "tags":
+        ["HTML", "js", "CSS"],
+        "description": "Two sentence description. Boo yah"
+    }
+    ]
+}
